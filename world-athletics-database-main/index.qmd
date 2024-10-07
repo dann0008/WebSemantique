@@ -1,0 +1,41 @@
+---
+jupyter: python3
+---
+# About
+Some 400k athlete performances for various events scraped from [World Athletics](https://worldathletics.org/records/all-time-toplists/sprints/100-metres/outdoor/women/senior).
+
+The data contains information about a variety of outdoor track and field events, as well as road running and walking events.
+World Athletics collects performances on the elite level.
+Results are measured in time or distance units; or points (for e.g. the decathlon).
+For example, running events have their results measured in hours/minutes/seconds, whereas the long and high jump have their results measured in meters. For some spring and jumping events, there are measurements of the wind reading.
+
+
+## Get the data
+
+Copy the code below to download the full data set.
+```python
+import pandas as pd
+root = "https://raw.githubusercontent.com/thomascamminady/"
+path = "world-athletics-database/main/data/data.csv"
+pd.read_csv(root+path, delimiter=";", parse_dates=True)
+```
+
+Or find the source code on [Github](https://github.com/thomascamminady/world-athletics-database).
+
+
+## Development
+
+First, clone the repository and navigate to the project directory. Then, install the necessary dependencies:
+
+```bash
+make init
+```
+
+Next, you can parse and post-process the data:
+
+```python
+poetry run python world_athletics_database/parse.py
+poetry run python world_athletics_database/postprocess.py
+```
+
+**Note:** Parsing the data may take up to 20 minutes.
