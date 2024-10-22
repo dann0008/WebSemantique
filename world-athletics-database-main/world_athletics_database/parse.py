@@ -18,7 +18,7 @@ def parse_event(event, sex):
     df_list = []
     while True:
         page += 1
-        url = f"""https://worldathletics.org/records/all-time-toplists/{category}/{event}/{condition}/{sex}/senior?regionType=world&timing=electronic&windReading=regular&page={page}&bestResultsOnly=false&firstDay=2000-01-01&lastDay=2024-09-29"""
+        url = f"""https://worldathletics.org/records/all-time-toplists/{category}/{event}/{condition}/{sex}/senior?regionType=world&timing=electronic&windReading=regular&page={page}&bestResultsOnly=false&firstDay=2024-01-01&lastDay=2024-09-29"""
         try:
             print(url)
             df = pd.read_html(url)
@@ -46,8 +46,8 @@ if __name__ == "__main__":
     events_male = data[7]["cases"][0]["values"]
     event_male_urls = [ev["disciplineNameUrlSlug"] for ev in events_male]
     print(event_male_urls)
-    #with Pool(8) as p:
-    #    print(p.map(parse_event_men, event_male_urls))
+    with Pool(8) as p:
+        print(p.map(parse_event_men, event_male_urls))
     events_female = data[7]["cases"][24]["values"]
     event_female_urls = [ev["disciplineNameUrlSlug"] for ev in events_female]
     with Pool(8) as p:

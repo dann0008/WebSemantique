@@ -1,0 +1,7 @@
+Id,Rank,Mark,Wind,Competitor,DOB,Nat,Pos,Venue,City,Country,Date,Result_Score,Event,Sex
+1,1,9.77,0.9,Kishane_Thompson,2001-07-17,JAM,1,National Stadium,Kingston,JAM,2024-06-28,1287,100_metres,male
+2,2,9.79,1.5,Ferdinand_Omanyala,1996-01-02,KEN,1,Nyayo National Stadium,Nairobi,KEN,2024-06-15,1280,100_metres,male
+3,2,9.79,1.0,Noah_Lyles,1997-07-18,USA,1,Stade de France,Paris,FRA,2024-08-04,1280,100_metres,male
+4,2,9.79,1.0,Kishane_Thompson,2001-07-17,JAM,2,Stade de France,Paris,FRA,2024-08-04,1280,100_metres,male
+5,5,9.8,0.5,Kishane_Thompson,2001-07-17,JAM,1sf3,Stade de France,Paris,FRA,2024-08-04,1276,100_metres,male
+6,6,9.81,-0.3,Noah_Lyles,1997-07-18,USA,1,Olympic Stadium,London,GBR,2024-07-20,1274,100_metres,male

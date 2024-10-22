@@ -1,0 +1,126 @@
+@prefix dbo:  <http://dbpedia.org/ontology/> .
+@prefix schema:  <https://schema.org/> .
+@prefix dbp:  <http://dbpedia.org/property/> .
+@prefix dbr:  <http://dbpedia.org/resource/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+
+<https://www.wikipedia.org/wiki/Kishane_Thompson>
+        rdf:type         foaf:Person ;
+        dbo:birthDate    "2001-07-17"^^xsd:date ;
+        foaf:name        "Kishane_Thompson" ;
+        foaf:gender      "male" ;
+        dbp:nationality  "JAM" ;
+        dbp:event        <Event_1> .
+
+<Event_1>  rdf:type      schema:Event ;
+        dbp:event        "100_metres" ;
+        dbp:venue        "National Stadium" ;
+        dbo:city         "Kingston" ;
+        dbp:country      "JAM" ;
+        dbp:mark         "9.77"^^xsd:float ;
+        dbo:currentRank  "1"^^xsd:int ;
+        dbo:ranking      "1"^^xsd:int ;
+        dbr:Wind_speed   "0.9"^^xsd:float ;
+        dbp:score        "1287"^^xsd:int ;
+        dbp:dates        "2024-06-28"^^xsd:date .
+
+<https://www.wikipedia.org/wiki/Ferdinand_Omanyala>
+        rdf:type         foaf:Person ;
+        dbo:birthDate    "1996-01-02"^^xsd:date ;
+        foaf:name        "Ferdinand_Omanyala" ;
+        foaf:gender      "male" ;
+        dbp:nationality  "KEN" ;
+        dbp:event        <Event_2> .
+
+<Event_2>  rdf:type      schema:Event ;
+        dbp:event        "100_metres" ;
+        dbp:venue        "Nyayo National Stadium" ;
+        dbo:city         "Nairobi" ;
+        dbp:country      "KEN" ;
+        dbp:mark         "9.79"^^xsd:float ;
+        dbo:currentRank  "2"^^xsd:int ;
+        dbo:ranking      "1"^^xsd:int ;
+        dbr:Wind_speed   "1.5"^^xsd:float ;
+        dbp:score        "1280"^^xsd:int ;
+        dbp:dates        "2024-06-15"^^xsd:date .
+
+<https://www.wikipedia.org/wiki/Noah_Lyles>
+        rdf:type         foaf:Person ;
+        dbo:birthDate    "1997-07-18"^^xsd:date ;
+        foaf:name        "Noah_Lyles" ;
+        foaf:gender      "male" ;
+        dbp:nationality  "USA" ;
+        dbp:event        <Event_3> .
+
+<Event_3>  rdf:type      schema:Event ;
+        dbp:event        "100_metres" ;
+        dbp:venue        "Stade de France" ;
+        dbo:city         "Paris" ;
+        dbp:country      "FRA" ;
+        dbp:mark         "9.79"^^xsd:float ;
+        dbo:currentRank  "2"^^xsd:int ;
+        dbo:ranking      "1"^^xsd:int ;
+        dbr:Wind_speed   "1.0"^^xsd:float ;
+        dbp:score        "1280"^^xsd:int ;
+        dbp:dates        "2024-08-04"^^xsd:date .
+
+<https://www.wikipedia.org/wiki/Kishane_Thompson>
+        rdf:type         foaf:Person ;
+        dbo:birthDate    "2001-07-17"^^xsd:date ;
+        foaf:name        "Kishane_Thompson" ;
+        foaf:gender      "male" ;
+        dbp:nationality  "JAM" ;
+        dbp:event        <Event_4> .
+
+<Event_4>  rdf:type      schema:Event ;
+        dbp:event        "100_metres" ;
+        dbp:venue        "Stade de France" ;
+        dbo:city         "Paris" ;
+        dbp:country      "FRA" ;
+        dbp:mark         "9.79"^^xsd:float ;
+        dbo:currentRank  "2"^^xsd:int ;
+        dbo:ranking      "2"^^xsd:int ;
+        dbr:Wind_speed   "1.0"^^xsd:float ;
+        dbp:score        "1280"^^xsd:int ;
+        dbp:dates        "2024-08-04"^^xsd:date .
+
+<https://www.wikipedia.org/wiki/Kishane_Thompson>
+        rdf:type         foaf:Person ;
+        dbo:birthDate    "2001-07-17"^^xsd:date ;
+        foaf:name        "Kishane_Thompson" ;
+        foaf:gender      "male" ;
+        dbp:nationality  "JAM" ;
+        dbp:event        <Event_5> .
+
+<Event_5>  rdf:type      schema:Event ;
+        dbp:event        "100_metres" ;
+        dbp:venue        "Stade de France" ;
+        dbo:city         "Paris" ;
+        dbp:country      "FRA" ;
+        dbp:mark         "9.8"^^xsd:float ;
+        dbo:currentRank  "5"^^xsd:int ;
+        dbr:Wind_speed   "0.5"^^xsd:float ;
+        dbp:score        "1276"^^xsd:int ;
+        dbp:dates        "2024-08-04"^^xsd:date .
+
+<https://www.wikipedia.org/wiki/Noah_Lyles>
+        rdf:type         foaf:Person ;
+        dbo:birthDate    "1997-07-18"^^xsd:date ;
+        foaf:name        "Noah_Lyles" ;
+        foaf:gender      "male" ;
+        dbp:nationality  "USA" ;
+        dbp:event        <Event_6> .
+
+<Event_6>  rdf:type      schema:Event ;
+        dbp:event        "100_metres" ;
+        dbp:venue        "Olympic Stadium" ;
+        dbo:city         "London" ;
+        dbp:country      "GBR" ;
+        dbp:mark         "9.81"^^xsd:float ;
+        dbo:currentRank  "6"^^xsd:int ;
+        dbo:ranking      "1"^^xsd:int ;
+        dbr:Wind_speed   "-0.3"^^xsd:float ;
+        dbp:score        "1274"^^xsd:int ;
+        dbp:dates        "2024-07-20"^^xsd:date .

@@ -2,6 +2,7 @@
 
 ## Membre du Groupe
 
+| Basquin Nicolas |
 | Danneaux Lucas |
 
 ## Dataset utilisés
@@ -21,11 +22,12 @@ les catégories qui seront conservés seront les suivantes :
 - 110 Mètres Haies (Femme)
 - 400 Mètres Haies (Homme/Femme)
 
-Les données récoltés auront comme période du 1/1/2000 au 28/09/2024.
+Les données récoltés auront comme période du 1/1/2024 au 22/10/2024.
 
 
 ### Exécution des commandes dans le répertoire world-athletics-database-main
 #### Récupération des données
+- `env\Script\activate`
 - `python world_athletics_database/parse.py`
 - `python world_athletics_database/postprocess.py`
 #### Transformation des données
@@ -37,7 +39,7 @@ Certaines données récupérés sont reformatés afin de pouvoir être plus faci
 Mise en place en cours
 - `PS C:\Users\lucas\Downloads\Web Sémantique\tarql> mvn package appassembler:assemble`
 Utiliser l'outil Tarql pour sémantiser les données
-- `.\tarql\target\appassembler\bin\tarql.bat .\test.sparql > .\test.ttl`
+- `.\tarql\target\appassembler\bin\tarql .\transform.sparql .\data\data_transformed.csv > .\test.ttl`
 
 ## Lancer le server Fuseki local
 `PS C:\apache-jena-fuseki-5.1.0> java -jar .\fuseki-server.jar`

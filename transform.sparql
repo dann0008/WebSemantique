@@ -1,0 +1,41 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX schema: <https://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+CONSTRUCT {
+    ?URI a foaf:Person;
+                dbo:birthDate       ?DOB_typed;
+                foaf:name           ?Competitor;
+                foaf:gender         ?Sex;
+                dbp:nationality     ?Nat;
+                dbp:event           ?event_id.
+
+    ?event_id a schema:Event;
+                dbp:event           ?Event;
+                dbp:venue           ?Venue;
+                dbo:city            ?City;
+                dbp:country         ?Country;
+                dbp:mark            ?Mark_typed;
+                dbo:currentRank     ?Rank_typed;
+                dbo:ranking         ?Pos_typed;
+                dbr:Wind_speed      ?Wind_typed;
+                dbp:score           ?Result_Score_typed;
+                dbp:dates           ?Date_typed.
+}   
+
+WHERE {
+    # Athlete
+    BIND (URI(CONCAT("https://www.wikipedia.org/wiki/", ?Competitor)) AS ?URI).
+    BIND (xsd:date(?DOB) as ?DOB_typed).
+    # Event
+    BIND (URI(CONCAT("Event_", STR(?Id))) AS ?event_id).
+    BIND (xsd:date(?Date) as ?Date_typed).
+    BIND (xsd:float(?Mark) as ?Mark_typed).
+    BIND (xsd:float(?Wind) as ?Wind_typed).
+    BIND (xsd:int(?Rank) as ?Rank_typed).
+    BIND (xsd:int(?Pos) as ?Pos_typed).
+    BIND (xsd:int(?Result_Score) as ?Result_Score_typed).
+}
