@@ -1,1 +1,29 @@
 # Liste des requêtes de test exécuté sur le jeu de données depuis le serveur Fuseki
+
+PREFIX dbo:  <http://dbpedia.org/ontology/>
+PREFIX schema:  <https://schema.org/>
+PREFIX dbp:  <http://dbpedia.org/property/>
+PREFIX dbr:  <http://dbpedia.org/resource/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX foaf:  <http://xmlns.com/foaf/0.1/>
+
+# Liste des athlètes ayant remporter au moins une course en 2024.
+
+SELECT DISTINCT ?name ?event_name WHERE {
+  ?person dbp:event ?event ;
+          foaf:name ?name.
+  ?event dbp:event ?event_name;
+         dbo:ranking ?rank.
+  Filter(?rank = 1)
+}
+
+# Liste des nations ayant le plus d'athlètes victorieux en 2024.
+SELECT ?nationality (COUNT(?person) AS ?nb_win) WHERE {
+  ?person dbp:event ?event ;
+          dbp:nationality ?nationality.
+  ?event dbo:ranking ?rank.
+  Filter(?rank = 1)
+} GROUP BY ?nationality
+ORDER BY DESC(?nb_win)
+LIMIT 10

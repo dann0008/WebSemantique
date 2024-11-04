@@ -48,3 +48,9 @@ Utiliser l'outil Tarql pour sémantiser les données
 - [Outil Tarql](https://tarql.github.io/)
 - [Dataset](https://www.kaggle.com/datasets/mexwell/world-athletics-database)
 - [Github du projet de récupération de données](https://github.com/thomascamminady/world-athletics-database)
+
+#Note 
+https://github.com/DjibSan/semantic-data-project/blob/main/script_change_csv_ttl.py
+https://github.com/YannisCHUPIN/SemanticWebProject/blob/main/convert_csv_to_rdf.py
+
+í
