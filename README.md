@@ -5,6 +5,10 @@
 | Basquin Nicolas |
 | Danneaux Lucas |
 
+## Slides de présentation du projet
+
+[Google Slides du projet](https://docs.google.com/presentation/d/1b_Bj5HaflzAHDLpObsYDBm_gTWdTbdy5j4HuAsDxfis/edit#slide=id.g3072222d657_0_8)
+
 ## Dataset utilisés
 - **Intitulé** : World Athletics Database
 - **Source** : https://github.com/thomascamminady/world-athletics-database
@@ -36,21 +40,19 @@ Certaines données récupérés sont reformatés afin de pouvoir être plus faci
 - `python transform.py`
 
 ## Sémantisation des données
-Mise en place en cours
+Assembler l'outil tarql qui sera manipuler à l'aide de l'outil Maven
 - `PS C:\Users\lucas\Downloads\Web Sémantique\tarql> mvn package appassembler:assemble`
-Utiliser l'outil Tarql pour sémantiser les données
-- `.\tarql\target\appassembler\bin\tarql .\transform.sparql .\data\data_transformed.csv > .\test.ttl`
+
+Utilisation de l'outil Tarql pour sémantiser les données
+- `.\tarql\target\appassembler\bin\tarql .\transform.sparql .\data\data_transformed.csv > .\athletics.ttl`
+
+Le résultat de la sémantisation des données est le fichier [athletics.ttl](athletics.ttl) qui contient plus de 160 000 triplets. 
+Il devient alors de réaliser des requêtes à l'aide d'un serveur fuseki.
 
 ## Lancer le server Fuseki local
-`PS C:\apache-jena-fuseki-5.1.0> java -jar .\fuseki-server.jar`
+`PS C:\apache-jena-fuseki-5.1.0> java -jar .\fuseki-server.jar` 
 
 ## Resource utilisés
 - [Outil Tarql](https://tarql.github.io/)
 - [Dataset](https://www.kaggle.com/datasets/mexwell/world-athletics-database)
 - [Github du projet de récupération de données](https://github.com/thomascamminady/world-athletics-database)
-
-#Note 
-https://github.com/DjibSan/semantic-data-project/blob/main/script_change_csv_ttl.py
-https://github.com/YannisCHUPIN/SemanticWebProject/blob/main/convert_csv_to_rdf.py
-
-í
