@@ -7,7 +7,7 @@ with open('../data/data.csv', newline='', encoding="utf8") as csvfile:
     entete = False
     for row in spamreader:
         if not entete:
-            spamwriter.writerow(["Id",row[0],row[1],row[2],row[3],row[4],row[5],row[6],"Venue","City","Country",row[8],"Result_Score",row[11],row[12]])
+            spamwriter.writerow(["Id",row[0],row[1],row[2],"URI_Name",row[3],row[4],row[5],row[6],"Venue","City","Country",row[8],"Result_Score",row[11],row[12]])
             entete = True
         else:
             id += 1
@@ -50,8 +50,46 @@ with open('../data/data.csv', newline='', encoding="utf8") as csvfile:
                     mot = ""
                 else:
                     mot += i
+    # Suppression de tous les caractères spéciaux causant des problèmes d'affichage
             ville = ville.replace("é","e")
             ville = ville.replace("è","e")
+            ville = ville.replace("ê","e")
+            ville = ville.replace("ë","e")
+            ville = ville.replace("É","E")
+            ville = ville.replace("Ê","E")
+            ville = ville.replace("Ë","E")
+            ville = ville.replace("È","E")
+            ville = ville.replace("à","a")
+            ville = ville.replace("À","a")
+            ville = ville.replace("û","u")
+            ville = ville.replace("ü","u")
+            ville = ville.replace("ç","c")
+            stade = stade.replace("é","e")
+            stade = stade.replace("è","e")
+            stade = stade.replace("ê","e")
+            stade = stade.replace("ë","e")
+            stade = stade.replace("É","E")
+            stade = stade.replace("Ê","E")
+            stade = stade.replace("Ë","E")
+            stade = stade.replace("È","E")
+            stade = stade.replace("à","a")
+            stade = stade.replace("À","a")
+            stade = stade.replace("û","u")
+            stade = stade.replace("ü","u")
+            stade = stade.replace("ç","c")
+            nom = nom.replace("é","e")
+            nom = nom.replace("è","e")
+            nom = nom.replace("ê","e")
+            nom = nom.replace("ë","e")
+            nom = nom.replace("É","E")
+            nom = nom.replace("Ê","E")
+            nom = nom.replace("Ë","E")
+            nom = nom.replace("È","E")
+            nom = nom.replace("à","a")
+            nom = nom.replace("À","a")
+            nom = nom.replace("û","u")
+            nom = nom.replace("ü","u")
+            nom = nom.replace("ç","c")
             pays = mot.replace("(","").replace(")","")
             row[11] = row[11].replace("\\"," ")
             if row[11] == "Men 100 Metres":
@@ -74,4 +112,6 @@ with open('../data/data.csv', newline='', encoding="utf8") as csvfile:
                 sport = "200_metres"
             if row[11] == "Women 400 Metres":
                 sport = "400_metres"
-            spamwriter.writerow([id,row[0],row[1],row[2],nom,row[4],row[5],row[6],stade,ville,pays,row[8],row[9],sport,row[12]])
+            nom_uri = nom
+            nom = nom = nom.replace("_"," ")
+            spamwriter.writerow([id,row[0],row[1],row[2],nom_uri, nom, row[4],row[5],row[6],stade,ville,pays,row[8],row[9],sport,row[12]])

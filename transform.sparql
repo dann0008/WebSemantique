@@ -28,7 +28,7 @@ CONSTRUCT {
 
 WHERE {
     # Athlete
-    BIND (URI(CONCAT("https://www.wikipedia.org/wiki/", ?Competitor)) AS ?URI).
+    BIND (URI(CONCAT("https://www.wikipedia.org/wiki/", ?URI_Name)) AS ?URI).
     BIND (xsd:date(?DOB) as ?DOB_typed).
     # Event
     BIND (URI(CONCAT("Event_", STR(?Id))) AS ?event_id).
