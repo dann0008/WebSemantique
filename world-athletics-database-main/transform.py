@@ -19,6 +19,10 @@ with open('../data/data.csv', newline='', encoding="utf8") as csvfile:
                     mot = mot.capitalize()
                     nom += f"{mot}_"
                     mot = ""
+                elif i == "'":
+                    mot = mot.capitalize()
+                    nom += f"{mot}'"
+                    mot = ""
                 else:
                     mot += i
             nom = nom[:-1]
@@ -50,6 +54,10 @@ with open('../data/data.csv', newline='', encoding="utf8") as csvfile:
                     mot = ""
                 else:
                     mot += i
+
+    # Création d'une exception pour l'athlète Sydney Mclaughlin-levrone qui est un cas trop complexe à gerer
+            if nom == "Sydney_Mclaughlin-levrone":
+                nom = "Sydney_McLaughlin-Levrone"
     # Suppression de tous les caractères spéciaux causant des problèmes d'affichage
             ville = ville.replace("é","e")
             ville = ville.replace("è","e")
