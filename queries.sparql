@@ -27,3 +27,23 @@ SELECT ?nationality (COUNT(?person) AS ?nb_win) WHERE {
 } GROUP BY ?nationality
 ORDER BY DESC(?nb_win)
 LIMIT 10
+
+# Liste des athlètes ayant participer aux JO et réaliser la meilleure performance de l'année (Avec le Groupe 1)
+
+SELECT DISTINCT ?name ?event_name ?gender
+WHERE {
+    SERVICE <http://localhost:3030/Athletics/query> {
+        ?person dbp:event ?event ;
+                foaf:gender ?gender;
+                foaf:name ?name.
+        ?event dbp:event ?event_name;
+               dbo:currentRank ?rank.
+    }
+    SERVICE <http://localhost:3030/Olympics/query> {
+        ?s rdf:type foaf:Person;
+        foaf:name ?JO_Name;
+    }
+    FILTER(STR(?name) = STR(?JO_Name))
+    FILTER(?rank = 1)
+}
+ORDER BY DESC(?event_name) DESC(?gender)

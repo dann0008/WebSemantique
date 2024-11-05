@@ -4,7 +4,7 @@
 
 | Basquin Nicolas |
 | Danneaux Lucas |
-
+| Diop Cheikh Tidiane |
 ## Slides de présentation du projet
 
 [Google Slides du projet](https://docs.google.com/presentation/d/1b_Bj5HaflzAHDLpObsYDBm_gTWdTbdy5j4HuAsDxfis/edit#slide=id.g3072222d657_0_8)
